@@ -1,0 +1,167 @@
+This report was run: Tue Oct 31 14:26:30 EDT 2017
+
+
+The report file name is iam.txt
+Initially written to the directory /home/mrocque/code/shell
+
+
+Bios Version:
+	Version: A04
+
+
+IPMI Version:
+No IPMI device on this computer
+
+
+System and Motherboard IDs:
+	Product Name: Inspiron 3847
+	Product Name: 088DT1       
+	Serial Number: .G1NTP02.CN7016343J009H.           
+
+
+Processor Information:
+	Version: Intel(R) Core(TM) i5-4440 CPU @ 3.10GHz
+On-line CPU(s) list: 0-3
+NUMA node(s):        1
+NUMA node0 CPU(s):   0-3
+Core(s) per socket:  4
+
+
+Memory Information:
+Total RAM: 8087288 kB.
+
+
+DIMM Information:
+Number of DIMMs: 2
+	Size: 4096 MB
+	Size: 4096 MB
+
+
+	Speed: 1600 MT/s
+	Configured Clock Speed: 1600 MT/s
+	Speed: 1600 MT/s
+	Configured Clock Speed: 1600 MT/s
+
+
+	Manufacturer: Samsung
+	Serial Number: 14031615
+	Part Number: M378B5173DB0-CK0  
+	Manufacturer: Samsung
+	Serial Number: 14031617
+	Part Number: M378B5173DB0-CK0  
+
+
+Storage Information:
+Disk:
+Disk /dev/sda: 931.5 GiB, 1000204886016 bytes, 1953525168 sectors
+Disklabel type: gpt
+
+
+Output of cat /proc/scsi/scsi
+  Vendor: ATA      Model: ST1000DM003-1CH1 Rev: CC47
+  Vendor: MATSHITA Model: DVD+-RW SW830    Rev: D.02
+
+
+Output of df -h: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            3.9G     0  3.9G   0% /dev
+tmpfs           790M   18M  772M   3% /run
+/dev/sda2       916G  149G  721G  18% /
+tmpfs           3.9G   58M  3.9G   2% /dev/shm
+tmpfs           5.0M  4.0K  5.0M   1% /run/lock
+tmpfs           3.9G     0  3.9G   0% /sys/fs/cgroup
+/dev/sda1       511M  4.6M  507M   1% /boot/efi
+tmpfs           790M   20K  790M   1% /run/user/126
+tmpfs           790M  3.7M  787M   1% /run/user/1000
+
+
+Contents of /etc/fstab: 
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+# / was on /dev/sda2 during installation
+UUID=a52c1e10-cd05-4891-85bb-ad03857d6e41 /               ext4    errors=remount-ro 0       1
+# /boot/efi was on /dev/sda1 during installation
+UUID=2B2B-F485  /boot/efi       vfat    umask=0077      0       1
+/swapfile                                 none            swap    sw              0       0
+
+
+Software RAID information: 
+No software RAID on this system
+
+
+zfs Information: 
+No zfs on this system.
+
+
+PCI Information: 
+  Search Criteria: 
+    nvidia, amd, lsi, areca, mellanox, qlogic, ethernet
+  Edit script to add other pci device makers or types
+
+
+02:00.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller (rev 0c)
+		LnkCap:	Port #0, Speed 2.5GT/s, Width x1, ASPM L0s L1, Exit Latency L0s unlimited, L1 <64us
+		LnkSta:	Speed 2.5GT/s, Width x1, TrErr- Train- SlotClk+ DLActive- BWMgmt- ABWMgmt-
+
+
+NVIDIA Information:
+No Cuda on this system
+
+
+AMD GPU Information:
+No AMD GPU on this system
+
+
+Compilers: 
+
+
+GNU Compiler: 
+gcc (Ubuntu 7.2.0-8ubuntu3) 7.2.0
+Copyright (C) 2017 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+NVidia Compiler: 
+No nvcc on this system
+
+
+Intel Compiler: 
+No icc on this system
+
+
+OpenMPI Compiler: 
+No mpicc on this system
+
+
+Distro: 
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=17.10
+DISTRIB_CODENAME=artful
+DISTRIB_DESCRIPTION="Ubuntu 17.10"
+NAME="Ubuntu"
+VERSION="17.10 (Artful Aardvark)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 17.10"
+VERSION_ID="17.10"
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+VERSION_CODENAME=artful
+UBUNTU_CODENAME=artful
+
+
+Kernel: 
+4.13.0-16-generic
+
+
+IPMI Sensor Readings:
+No IPMI device on this computer
+
+

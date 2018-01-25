@@ -1,0 +1,64 @@
+#!/bin/bash
+
+# Get System information
+echo "System Information"
+echo "================"
+echo "BIOS  : `dmidecode -t 0 | grep Version`"
+echo "System: `dmidecode -t 1 | grep Product`"
+echo "Board : `dmidecode -t 2 | grep Product`"
+echo "Total RAM :     `free | grep Mem | awk '{print $2}'`-KB." 
+echo "Clock Speed :   `dmidecode -t 17 | grep Configured | head -n 1 \
+      | awk '{print $4 $5}'`"
+echo
+
+# Get IPMI information
+echo "IPMI Information"
+echo "================"
+ls /dev | grep ipmi > /dev/null
+if [ $? -eq 0 ]; then
+    ipmitool fwum info | grep Revision
+    ipmitool lan print | grep Address
+    echo
+else
+    echo "No IPMI device on this computer"
+    echo
+fi
+
+# Get RAID Adapter information
+# If this system has another type of raid adapter then you can add 
+# code to process it if you like.
+
+# LSI check
+echo "LSI Information"
+echo "==============="
+lspci | grep -i lsi > /dev/null
+if [ $? -eq 0 ] ; then
+    which MegaCli64 > /dev/null
+    if [ $? -eq 0 ] ; then
+        echo "I have found LSI hardware."
+        MegaCli64 -AdpAllInfo -aAll | egrep "Product Name|Serial No|FW Package Build"
+	echo
+    else
+        echo "I have found LSI hardware, but can not find MegaCli64 to get it's information."
+        echo
+    fi
+else
+    echo "No LSI adapters found on this system."
+    echo
+fi
+
+# Areca check
+echo "Areca Information"
+echo "================="
+lspci | grep -i areca > /dev/null
+if [ $? -eq 0 ] ; then
+    which cli64 > /dev/null
+    if [ $? -eq 0 ] ; then
+        echo "I have found Areca hardware."
+        cli64 sys info | egrep 'Version|Controller'
+    else
+        echo "I have found an Areca adapter but can not find cli64 to get it's information."
+    fi
+else
+    echo "No Areca adapters found on this system."
+fi
